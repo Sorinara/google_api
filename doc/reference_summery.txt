@@ -1,0 +1,190 @@
+ json은 curl의 -d 옵션으로 그냥 보내버리면 되는듯
+
+POST https://www.googleapis.com/calendar/v3/calendars/uusumsslinfipjm67208umf460%40group.calendar.google.com/events?key={YOUR_API_KEY}
+
+Content-Type:  application/json
+Authorization:  Bearer ya29.AHES6ZT1vwGZ7isVuDlGlvVh31i9vJZ9b43t97PYqtQwnzCA
+X-JavaScript-User-Agent:  Google APIs Explorer
+
+{
+"end": {
+"dateTime": "2013-03-11T01:59:00+09:00"
+},
+"start": {
+"dateTime": "2013-03-11T01:00:00+09:00"
+},
+"description": "이것은 설명란 입니다.",
+"summary": "이것은 타이틀입니다. 왜 써머리야..."
+}
+
+*** Google Calendar Parameter List ***
+Only Think "Require Parameters, Optional Parameters, Request body Exist"
+
+- 파라미터는 알아야하고 (뭐가 require이고 optional인지)
+- json body, fields는 존재/미존재 여부만 알면 됨 일단 여기까지만
+ACL
+-delete	:   (R) calendarId, ruleId 
+            (O) -
+            (B) X
+            (F) X
+
+-get	:   (R) calendarId, ruleId 
+            (O) -
+            (B) X
+            (F) O
+
+-insert	:   (R) calendarId
+            (O) -
+            (B) O
+            (F) O
+
+-list	:   (R) calendarId 
+            (O) -
+            (B) X 
+            (E) O
+
+-update	:   (R) calendarId, ruleId 
+            (O) - 
+            (B) O
+            (F) O
+
+-patch	:   (R) calendarId, ruleId
+            (O) -
+            (B) O
+            (F) O
+
+CalendarList
+-delete	:   (R) calendarId
+            (O) -
+            (B) X
+            (F) X
+
+-get	:   (R) calendarId 
+            (O) -
+            (B) X
+            (F) O
+
+-insert	:   (R) -
+            (O) colorRgbFormat
+            (B) O
+            (F) O
+
+-list	:   (R) -
+            (O) maxResult, minAccessRole, pageToken, showHidden
+            (B) X
+            (F) O
+
+-update	:   (R) calendarId 
+            (O) colorRgbFormat
+            (B) O
+            (F) O
+
+-patch	:   (R) calendarId 
+            (O) colorRgbFormat
+            (B) O
+            (F) O
+
+Calendars
+-clear	:   (R) calendarId
+            (O) -
+            (B) X
+            (F) X
+
+-delete	:   (R) calendarId
+            (O) -
+            (B) X
+            (F) X
+
+-get	:   (R) calendarId
+            (O) -
+            (B) X
+            (F) O
+
+-insert	:   (R) -
+            (O) -
+            (B) O
+            (F) O
+
+-update	:   (R) calendarId
+            (O) -
+            (B) O
+            (F) X
+
+-patch	:   (R) calendarId
+            (O) -
+            (B) O
+            (F) O
+
+Colors
+-get	:   (R) -
+            (O) -
+            (B) X
+            (F) O
+
+Events
+-delete	:   (R) calendarId, eventId 
+            (O) sendNotifications
+            (B) X
+            (F) X
+
+-get	:   (R) calendarId, eventId 
+            (O) alwaysIncludeEmail, maxAttendees, timeZone
+            (B) X
+            (F) O
+
+-import	:   (R) calendarId
+            (O) -
+            (B) O
+            (F) O
+
+-insert	:   (R) calendarId 
+            (O) maxAttendess, sendNofifications
+            (B) O
+            (F) O
+
+-instance:  (R) calendarId, eventId 
+            (O) alwaysIncludeEmail, maxAttendees, originalStart, pageToken, showDeleted, timeMax, timeMin, timeZone
+            (B) X
+            (F) O
+
+-list	:   (R) calendarId 
+            (O) alwaysIncludeEmail, iCalUID, maxAttendees, maxResults, orderBy, pageToken, q, showDeleted, showHiddenInvitations, singleEvents, timeMax, timeMin, timeZone, updatedMin
+            (B) X
+            (F) O
+
+-move	:   (R) calendarId, destination, eventId 
+            (O) sendNotifications
+            (B) X
+            (F) O
+
+-quickAdd:  (R) calendarId, text 
+            (O) sendNotifications
+            (B) X
+            (F) O
+
+-update	:   (R) calendarId, eventId 
+            (O) alwaysIncludeEmail, maxAttendees, sendNotifications
+            (B) O
+            (F) O
+
+-patch	:   (R) calendarId, eventId 
+            (O) alwaysIncludeEmail, maxAttendees, sendNotifications
+            (B) O
+            (F) O
+
+Freebusy
+-query	:   (R) -
+            (O) -
+            (B) O
+            (F) O
+
+Settings
+-get	:   (R) setting
+            (O) -
+            (B) X
+            (F) O
+
+-list	:   (R) -
+            (O) -
+            (B) X
+            (F) O

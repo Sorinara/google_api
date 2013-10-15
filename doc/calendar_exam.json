@@ -1,0 +1,91 @@
+{
+    "kind": "calendar#events",
+    "etag": "\"vnNL_X_6XYVF-jSag8p74cFkQA8/toM_B-E-OO16ZkcAnCRlBftX_18\"",
+    "summary": "일정",
+    "description": "웹/모바일로 수동으로 직접 일정을 만들었을때 사용.",
+    "updated": "2013-03-18T04:00:35.753Z",
+    "timeZone": "Asia/Seoul",
+    "accessRole": "owner",
+    "items": [
+    {
+        "kind": "calendar#event",
+        "etag": "\"vnNL_X_6XYVF-jSag8p74cFkQA8/Z2NhbDAwMDAxMzYzNDE5MDg2MzcxMDAw\"",
+        "id": "eqh5ankk2l6fknqik7gtviu034",
+        "status": "tentative",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZXFoNWFua2sybDZma25xaWs3Z3R2aXUwMzQgbG93aWQ4NkBt",
+        "created": "2013-03-16T07:31:26.000Z",
+        "updated": "2013-03-16T07:31:26.371Z",
+        "summary": "인터넷 접속방지 사이트 설정",
+        "creator": {
+            "email": "lowid86@gmail.com",
+            "displayName": "JaeYa Lee",
+            "self": true
+        },
+        "organizer": {
+            "email": "lowid86@gmail.com",
+            "displayName": "JaeYa Lee",
+            "self": true
+        },
+        "start": {
+            "date": "2013-03-16"
+        },
+        "end": {
+            "date": "2013-03-17"
+        },
+        "iCalUID": "eqh5ankk2l6fknqik7gtviu034@google.com",
+        "sequence": 1,
+        "attendees": [
+        {
+            "email": "lowid86@gmail.com",
+            "displayName": "JaeYa Lee",
+            "organizer": true,
+            "self": true,
+            "responseStatus": "accepted"
+        }
+        ],
+            "reminders": {
+                "useDefault": false
+            }
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"vnNL_X_6XYVF-jSag8p74cFkQA8/Z2NhbDAwMDAxMzYzNDIxMDIwMTg1MDAw\"",
+        "id": "h1f5ql5ti0p3pa93a9vktgs25k",
+        "status": "tentative",
+        "htmlLink": "https://www.google.com/calendar/event?eid=aDFmNXFsNXRpMHAzcGE5M2E5dmt0Z3MyNWsgbG93aWQ4NkBt",
+        "created": "2013-03-16T07:32:25.000Z",
+        "updated": "2013-03-16T08:03:40.185Z",
+        "summary": "json name 검색모듈 작성",
+        "creator": {
+            "email": "lowid86@gmail.com",
+            "displayName": "JaeYa Lee",
+            "self": true
+        },
+        "organizer": {
+            "email": "lowid86@gmail.com",
+            "displayName": "JaeYa Lee",
+            "self": true
+        },
+        "start": {
+            "date": "2013-03-16"
+        },
+        "end": {
+            "date": "2013-03-17"
+        },
+        "iCalUID": "h1f5ql5ti0p3pa93a9vktgs25k@google.com",
+        "sequence": 1,
+        "attendees": [
+        {
+            "email": "lowid86@gmail.com",
+            "displayName": "JaeYa Lee",
+            "organizer": true,
+            "self": true,
+            "responseStatus": "accepted"
+        }
+        ],
+            "reminders": {
+                "useDefault": false
+            }
+    }
+    ]
+}

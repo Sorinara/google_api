@@ -1,0 +1,42 @@
+1, Auth key를 사용한 주소록 가져오기
+
+1) Auth key를 얻는다
+curl 'https://www.google.com/accounts/ClientLogin' -d Email=YourID@gmail.com -d Passwd=YourPassword -d accountType=GOOGLE -d service=cp -k
+
+2) Auth=의 값을 대입해서 주소록을 가지고 온다
+curl 'https://www.google.com/m8/feeds/contacts/default/full' --header "Authorization: GoogleLogin auth="......"' -k
+
+3) 가지고 온 xml파일을 파싱한다
+ref: https://developers.google.com/google-apps/contacts/v3/?hl=ko
+
+2, 캘린더 가지고 오기
+1) 캘린더 -> 설정(캘린더 환경설정)-> 캘린더에서 원하는 캘린더 선택-> 캘린더 주소를 사용함
+curl 'https://www.google.com/calendar/feeds/lowid86%40gmail.com/private-387b40e6bdf0a98ce6e46f612281f18b/basic'
+
+데이터를 잘 가져오기는하는데, 문제는 쿼리가 안되... 그럴땐 REST를 사용하자.
+"Authorize requests using OAuth 2.0:" 버튼이 파랑색임을 확인할것
+(만약 처음이라면, 간단한 설정으로 Auth를 등록할 수 있다)
+
+리턴하는 문서의 형식은 json이다.
+REST에 대한 간단한 설명 : https://developers.google.com/google-apps/calendar/firstapp
+Calendar API Reference  : https://developers.google.com/google-apps/calendar/v3/reference/
+TEST API Page           : https://developers.google.com/apis-explorer/#p/calendar/v3
+
+HTTP 헤더의 예시는 다음과 같다
+(URL Type은 "https://www.googleapis.com/apiName/apiVersion/resourcePath?parameters"이 기본임 구글캘린더의 경우 다음과 같은 주소가 된다
+https://www.googleapis.com/calendar/v3/lists/calendarListID/calendar?parameters
+https://www.googleapis.com/calendar/v3/users/userID/lists?parameters)
+YOUR_API_KEY에 해당하는 API_KEY는 다음 링크에 들어가서 Auth를 활성화하고 사용해야 한다 (http://code.google.com/apis/console)
+
+GET https://www.googleapis.com/calendar/v3/calendars/lowid86%40gmail.com/events?key={YOUR_API_KEY}
+Authorization:  Bearer ya29.AHES6ZQvEJa-NYudroGaOMhDQlLpzrZGUyfN77FVBTp4xdrT (이건 한번 Auth를 정해놓으면 고정인듯)
+X-JavaScript-User-Agent:  Google APIs Explorer
+
+기본 parameters 설명
+calendarId       : 자기계정명이며(예> lowid86@gmail.com) 자세한건 캘린더 설정에 들어가면 나와있다(2-1의 설정과 같음)
+timeMax, timeMax : YYYY-MM-DDTHH:mm:ss+UH:UM 형식으로 입력해준다(UH: UTC Hour, UM: UTC Minute)
+                   예> 2012-07-11T04:30:00+09:00 (+09:00은 UTF표준시간 +9시긴이라는 뜻. 한국/일본이 이 시간대를 가짐)
+
+cURL을 사용해서 쉘상에서 json파일을 받오보는 예제
+http://stackoverflow.com/questions/11359563/google-calendar-api-not-working-with-curl-client-request
+~/curl.sh를 참조할것
